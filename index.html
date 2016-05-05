@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
+<html lang="en" name="name1">
+    <head >
        
         <title>Triprakara</title>
         <meta name="keywords" content="" />
@@ -51,7 +51,7 @@ http://www.templatemo.com/tm-395-urbanic
         </script>
     </head>
     
-    <body>
+    <body >
     
         <div class="templatemo-top-menu" >
             <div class="container">
@@ -255,7 +255,7 @@ Triprakara will gives you a reward to a community that have many events . So, <b
 							<div class="col-md-6">
 								<strong>LET'S JOIN WITH TRIPRAKARA AND PROMOTE EDUCATION INDONESIA. </strong>
                                 <br class="clearfix"/>
-								<form name="login"  method="post">
+								
 								<div class="form-group">
 									<input type="email" name="mail" class="form-control" placeholder="Your Email.." />
 								</div>
@@ -268,7 +268,7 @@ Triprakara will gives you a reward to a community that have many events . So, <b
 								<div class="form-group">
 									<button type="button" class="btn btn-orange pull-right" id="RegBtn">REGISTRATION</button><!--edit by PEPI-->
                                 </div>
-								</form>
+							
    					</div>
                  </div>
             </div>
@@ -339,7 +339,7 @@ Triprakara will gives you a reward to a community that have many events . So, <b
             </div>
         </div>
 		
-        <div id="templatemo-contact" >
+        <div id="templatemo-contact"  >
             <div class="container">
                 <div class="row">
                     <div class="templatemo-line-header" >
@@ -356,41 +356,44 @@ Triprakara will gives you a reward to a community that have many events . So, <b
                         <!-- <p><img src="images/globe.png" alt="icon 3" /><a class="link_orange" href="#"><span class="txt_orange">www.company.com</span></a></p> -->
                      </div>   
                         <div class="col-md-6 contact_right">
-                        <form class="form-horizontal" action="insert.php" method="post">
+                        <form class="form-horizontal" id="form-comment">
+                            
                             <div class="form-group">
-                                <input type="text" class="form-control" name="na"placeholder="Your Name..." maxlength="40" />
+                                <input type="text" class="form-control" id="na" name="na"placeholder="Your Name..." maxlength="40" />
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" name="ema"placeholder="Your Email..." maxlength="40" />
+                                <input type="email" class="form-control" id="ema" name="ema"placeholder="Your Email..." maxlength="40" />
                             </div>
                             <div class="form-group">
-                                <select class="form-control" name="op" maxlength="40" />
-    								<option>Your City</option>
-                                    <option>Bandung</option>
-								    <option>Malang</option>
-								    <option>Surabaya</option>
-								    <option>Medan</option>
-                                    <option>Jakarta</option>
-							  	</select>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="ko"placeholder="Detail Address..." maxlength="40" />
+                                <input type="text" class="form-control" id="ko" name="ko"placeholder="Your Phone Number..." maxlength="40" />
                             </div>
                             
                       </div>
                       <div class="col-md-6 contact_right">
-                      		<div class="form-group" >
+                      		<!-- <div class="form-group" >
                             	<input type="file" class="form-control" name="fil" placeholder="Your Photo..." maxlength="40"  />
-                            </div>      
+                            </div>  -->     
                             <div class="form-group">
-                                <textarea  class="form-control" name="commen" style="height: 200px;" placeholder="Write down your message..."></textarea>
+                                <textarea  class="form-control"  name="commen" id="comment" style="height: 200px;" placeholder="Write down your message..."></textarea>
                             </div>
-                            <button type="submit" class="btn btn-orange pull-right">SEND</button>
+                            <input type="submit" value="comment"class="btn btn-orange pull-right"/>
+                            
+                             
+                               
                         </form>
 
                     </div>
                 </div>
                 <div >
+                    <div class="templatemo-line-header" >
+                        <div class="text-center">
+                            <hr class="team_hr team_hr_left hr_gray"/><span class="txt_darkgrey">COMMENT</span>
+                            <hr class="team_hr team_hr_right hr_gray" />
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                     <div  id="komentar" ><br> </div>
                     <br>
                     </div>
         </div>
@@ -478,8 +481,18 @@ Triprakara will gives you a reward to a community that have many events . So, <b
 		<script type="text/javascript">
 		$(document).ready(function(){
     		$("#RegBtn").click(function(){
-	        $("#myModal").modal();
+	           $("#myModal").modal();
 		    });
+            $("#form-comment").on("submit", function(e){
+                e.preventDefault();
+                var nama = $("#na").val();
+                var email = $("#ema").val();
+                var kontak = $("#ko").val();
+                var komen = $("#comment").val();
+                d = new Date();
+                $("div#komentar").append("<br>"+d.toUTCString()+","+nama+","+email+","+kontak+"<br>"+"<br>"+"     "+komen+"<br>"+"<br>");
+
+            })
 		});
 		</script>
   <style>
